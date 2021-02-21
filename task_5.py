@@ -6,8 +6,10 @@ price = [44.60, 78.76, 42, 12.67, 90.09, 54.34,
 print("*"*30, f"\n\nВывод цен с подписью:", sep="")
 for i in range(len(price)):
     if type(price[i]) == float:
-        rub= str(price[i]).split('.', -1)[0]
-        kop = str(price[i]).split('.',-1)[-1]
+        rub = str(price[i]).split('.', -1)[0]
+        if len(rub) == 1:
+            rub = "0{}".format(rub)
+        kop = str(price[i]).split('.', -1)[-1]
         if len(kop) == 1:
             kop = "{}0".format(kop)
     else:
